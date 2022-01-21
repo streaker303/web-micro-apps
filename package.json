@@ -1,0 +1,32 @@
+{
+  "name": "qiankun",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean": "bash ./scripts/clean.sh",
+    "install": "npm-run-all --serial install:*",
+    "install:global-module": "cd global-module && cnpm i",
+    "install:main": "cd main && cnpm i",
+    "install:sub-ven": "cd sub-ven && cnpm i",
+    "install:sub-vue": "cd sub-vue && cnpm i",
+    "prestart": "cd global-module && npm link",
+    "start": "npm-run-all --parallel start:*",
+    "start:sub-ven": "cd sub-ven && npm start",
+    "start:sub-vue": "cd sub-vue && npm start",
+    "start:main": "cd main && npm start",
+    "build": "npm-run-all --serial build:* && bash ./scripts/bundle.sh",
+    "test:build": "cross-env NODE_ENV=test npm-run-all --serial build:* && bash ./scripts/bundle.sh",
+    "build:main": "cd main && npm run build",
+    "build:sub-ven": "cd sub-ven && npm run build",
+    "build:sub-vue": "cd sub-vue && npm run build"
+  },
+  "author": "venus",
+  "license": "ISC",
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "npm-run-all": "^4.1.5"
+  },
+  "__npminstall_done": false,
+  "dependencies": {}
+}

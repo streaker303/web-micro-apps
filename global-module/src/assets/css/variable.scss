@@ -1,0 +1,26 @@
+// 1.主题定义
+$custom-default: (
+    font-color: green,
+    font-size: 14px,
+    bg-color: pink,
+);
+
+$custom-red: (
+    font-color: white,
+    font-size:18px,
+    bg-color: red,
+);
+
+$custom-yellow: (
+    font-color: black,
+    font-size:24px,
+    bg-color: yellow,
+);
+
+
+//  2.将定义好到主题添加到map中
+$themes:(
+    custom-default:$custom-default,
+    custom-red:$custom-red,
+    custom-yellow:$custom-yellow,
+)
