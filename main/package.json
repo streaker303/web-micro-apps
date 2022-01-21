@@ -34,7 +34,7 @@
     "eslint-plugin-vue": "^6.2.2",
     "vue-template-compiler": "^2.6.11",
     "whatwg-fetch": "^3.5.0",
-    "sass": "^1.26.10",
+    "sass": "~1.32.13",
     "sass-loader": "^10.0.2"
   },
   "browserslist": [
