@@ -38,10 +38,7 @@
 </template>
 
 <script>
-import { login } from '../server/api.js'
 import md5 from '$modules/js/md5.js'
-// import Base64 from '../../assets/js/base64.js'
-// import SvgImg from './svg_img.vue'
 export default {
     name: 'Login',
     components: {
@@ -124,34 +121,10 @@ export default {
                     captcha: obj.captcha
                 }
             }
-            login(data).then(res => {
-                console.log('success', res)
-                // this.$setCookie(res.tokenName + 'baseInfo', 'http://' + location.host + '/')
-                let userInfo = {
-                    cnName: res.info.chineseName,
-                    id: res.info.id,
-                    type: res.info.roleId,
-                    depName: res.depName
-                }
-                // this.$setsessionStorage('userInfo', userInfo)
-
-                // if (this.checked) {
-                //     let data = {
-                //         username: this.loginForm.username,
-                //         password: Base64.encode(this.loginForm.password)
-                //     }
-                //     this.$setlocalStorage('loginInfo', data)
-                // } else {
-                //     this.$removelocalStorage('loginInfo')
-                // }
-                setTimeout(() => {
-                    this.$router.push({
-                        path: '/micrApp'
-                    }, 100)
-                })
-            }).catch(error => {
-                console.log('error', error)
-                this.handleRefresh()
+            setTimeout(() => {
+                this.$router.push({
+                    path: '/micrApp'
+                }, 100)
             })
         }
     }
