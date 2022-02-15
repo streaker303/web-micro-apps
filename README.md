@@ -42,7 +42,9 @@ npm run test:build
 - 为保证各 vue 子项目配置文件一致，子项目的 `sass-loader` 需 10.0.0 版本以上
 
 #### 3. 主题切换
-- 针对不同主题，在 `global-module/src/variable.scss` 进行颜色、字体相关配置
+- 针对不同主题，在 `global-module/src/assets/css/variable.scss` 进行颜色、字体相关配置
+- 在`mixin.scss` 中定义混合指令，导出函数`themed` 供页面使用
+- 在单独 vue 项目的配置文件 `.vue.config.js` 中，声明全局 sass 变量文件，配置 `additionalData` 属性
 
 使用方法如下：
 ```
