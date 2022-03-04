@@ -15,7 +15,7 @@ const service = axios.create({
 service.interceptors.request.use(
     (config) => {
         // 测试环境加签
-        if (process.NODE_ENV === 'test' && config.method === 'post') {
+        if (process.env.NODE_ENV === 'test' && config.method === 'post') {
             let data = JSON.parse(JSON.stringify(config.data))
             let tempObj = {} // body 参数备份 后面与sign合并
             let tempTag = {} // 升序后生成sign
